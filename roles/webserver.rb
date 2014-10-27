@@ -8,6 +8,11 @@ all_env = [
   "recipe[apache2::mod_php5]",
   "recipe[apache2::mod_rewrite]",
   "recipe[wordpress]",
+  # "recipe[rstudio::cran]",
+  # "recipe[rstudio::server]",
+  # "recipe[nginx]",
+  # "recipe[rstudio::pam]",
+  "recipe[rstudio::shiny]",
 ]
 
 run_list(all_env)

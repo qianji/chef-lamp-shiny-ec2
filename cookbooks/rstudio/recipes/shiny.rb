@@ -1,9 +1,10 @@
-if default['rstudio']['shiny']['arch'] == 'amd64'
-    base_download_url = 'http://download3.rstudio.org/ubuntu-12.04/x86_64'
-else
-    raise Exception, "This cookbook doesn't work with i386."
-end
+# if default['rstudio']['shiny']['arch'] == 'amd64'
+    # base_download_url = 'http://download3.rstudio.org/ubuntu-12.04/x86_64'
+# else
+    # raise Exception, "This cookbook doesn't work with i386."
+# end
 
+base_download_url = 'http://download3.rstudio.org/ubuntu-12.04/x86_64'
 case node["platform"].downcase
 when "ubuntu", "debian"
     include_recipe "apt"
@@ -19,11 +20,18 @@ when "ubuntu", "debian"
     end
 
     execute "install-shiny-server" do
+        command "apt-get install libssl0.9.8"
         command "dpkg --install #{local_shiny_server_file}"
         not_if { ::File.exists?('/etc/init/shiny-server.conf') }
     end
 
     r_package "shiny"
+    r_package "codetools"
+    r_package "Rcpp"
+    r_package "dplyr"
+    r_package "shinyBS"
+    r_package "lattice"
+    r_package "rmarkdown"
 end
 
 group "shiny"
