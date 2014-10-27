@@ -17,10 +17,6 @@
 # limitations under the License.
 #
 
-# Customization: get passwords from encrypted data bag
-# Customization: get passwords from encrypted data bag
-
-
 mysql_service node['mysql']['service_name'] do
   version node['mysql']['version']
   port node['mysql']['port']
