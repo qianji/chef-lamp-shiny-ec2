@@ -17,7 +17,7 @@ apt-get upgrade -y
 
 # install dependency for r-base
 apt-get install libjbig0
-apt-get -f install -y
+apt-get install -f -y
 wget http://mirrors.kernel.org/ubuntu/pool/universe/t/tiff3/libtiff4_3.9.7-2ubuntu1_amd64.deb
 dpkg -i ./libtiff4_3.9.7-2ubuntu1_amd64.deb
 # --force-yes to handle the un-verified deb
@@ -44,5 +44,12 @@ R -e "install.packages('dplyr', repos='http://cran.rstudio.com/')"
 R -e "install.packages('shinyBS', repos='http://cran.rstudio.com/')"
 R -e "install.packages('lattice', repos='http://cran.rstudio.com/')"
 R -e "install.packages('rmarkdown', repos='http://cran.rstudio.com/')"
+
+#
+R -e "install.packages('Defaults', repos='http://cran.rstudio.com/')"
+R -e "install.packages('tidyr', repos='http://cran.rstudio.com/')"
+R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
+R -e "install.packages('PerformanceAnalytics', repos='http://cran.rstudio.com/')"
+R -e "install.packages('ggvis', repos='http://cran.rstudio.com/')"
 
 
