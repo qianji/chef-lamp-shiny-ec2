@@ -1,9 +1,7 @@
-# Install R based on https://sites.google.com/site/onmyraspberrypi/instal-r"
-# Firstly get the repository SSL key and import it in to apt.
-
 gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
 gpg -a --export E084DAB9 | sudo apt-key add -
 echo "deb http://cran.ma.imperial.ac.uk/bin/linux/ubuntu precise/" >> /etc/apt/sources.list
+echo "deb http://cz.archive.ubuntu.com/ubuntu saucy main universe" >> /etc/apt/sources.list
 
 apt-get update
 
@@ -15,8 +13,16 @@ cd cmake-2.8.11.2
 make
 make install
 
+apt-get upgrade -y
+
+# install dependency for r-base
+apt-get install libjbig0
+apt-get -f install -y
+wget http://mirrors.kernel.org/ubuntu/pool/universe/t/tiff3/libtiff4_3.9.7-2ubuntu1_amd64.deb
+dpkg -i ./libtiff4_3.9.7-2ubuntu1_amd64.deb
 # --force-yes to handle the un-verified deb
-apt-get install r-base-dev r-base -y --force-yes
+apt-get install r-base -y
+
 
 
 R -e "install.packages('codetools', repos='http://cran.rstudio.com/')"

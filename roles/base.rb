@@ -8,7 +8,7 @@ run_list(
   "recipe[build-essential]",
   "recipe[vim]",
   #"recipe[rstudio::shiny]",
-  "recipe[rstudio::server]"
+  #"recipe[rstudio::server]"
 ) 
 override_attributes(
   :authorization => {

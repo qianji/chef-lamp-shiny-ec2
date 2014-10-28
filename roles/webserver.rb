@@ -2,17 +2,17 @@ name "webserver"
 description "Web server role"
 all_env = [ 
   "role[base]",
-  "recipe[php]",
-  "recipe[php::module_mysql]",
-  "recipe[apache2]",
-  "recipe[apache2::mod_php5]",
-  "recipe[apache2::mod_rewrite]",
+  #"recipe[php]",
+  #"recipe[php::module_mysql]",
+  #"recipe[apache2]",
+  #"recipe[apache2::mod_php5]",
+  #"recipe[apache2::mod_rewrite]",
   "recipe[wordpress]",
   # "recipe[rstudio::cran]",
   # "recipe[rstudio::server]",
   # "recipe[nginx]",
   # "recipe[rstudio::pam]",
-  "recipe[rstudio::shiny]",
+  #"recipe[rstudio::shiny]",
 ]
 
 run_list(all_env)
