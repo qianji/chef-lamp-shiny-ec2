@@ -18,7 +18,7 @@ apt-get upgrade -y
 # install dependency for r-base
 apt-get install libjbig0
 apt-get -f install -y
-wget http://mirrors.kernel.org/ubuntu/pool/universe/t/tiff3/libtiff4_3.9.7-2ubuntu1_amd64.deb
+wget http://old-releases.ubuntu.com/ubuntu/pool/universe/t/tiff3/libtiff4_3.9.7-2ubuntu1_amd64.deb
 dpkg -i ./libtiff4_3.9.7-2ubuntu1_amd64.deb
 # --force-yes to handle the un-verified deb
 apt-get install r-base -y
