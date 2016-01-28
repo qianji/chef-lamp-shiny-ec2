@@ -56,7 +56,7 @@ R -e "install.packages('tidyr', repos='http://cran.rstudio.com/')"
 R -e "install.packages('quantmod', repos='http://cran.rstudio.com/')"
 R -e "install.packages('PerformanceAnalytics', repos='http://cran.rstudio.com/')"
 R -e "install.packages('ggvis', repos='http://cran.rstudio.com/')"
-
+R -e "install.packages('ggplot2', repos='http://cran.rstudio.com/')"
 apt-get install git -y
 cd /srv/shiny-server/
 git clone https://github.com/qianji/data-analysis-shiny.git
