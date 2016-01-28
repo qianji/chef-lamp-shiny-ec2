@@ -24,7 +24,12 @@ dpkg -i ./libtiff4_3.9.7-2ubuntu1_amd64.deb
 apt-get install r-base -y
 
 
+# memory swap file
+dd if=/dev/zero of=/swapfile bs=1024 count=512k
+mkswap /swapfile
+swapon /swapfile
 
+# install R packges
 R -e "install.packages('codetools', repos='http://cran.rstudio.com/')"
 R -e "install.packages('Rcpp', repos='http://cran.rstudio.com/')"
 R -e "install.packages('shiny', repos='http://cran.rstudio.com/')"
